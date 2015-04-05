@@ -46,6 +46,7 @@ class MachinesController < ApplicationController
       safe_attributes = [
         :name,
         parts_attributes: [
+          :id,
           :name,
           :_destroy
         ]
