@@ -18,7 +18,7 @@ class MachinesController < ApplicationController
   def create
     @machine = Machine.new(machine_params)
     if @machine.save
-      redirect_to @machine, notice: 'Machine was successfully created.'
+      redirect_to machines_path, notice: 'Machine was successfully created.'
     else
       render :new
     end
@@ -48,6 +48,7 @@ class MachinesController < ApplicationController
         parts_attributes: [
           :id,
           :name,
+          :quantity,
           :_destroy
         ]
       ]

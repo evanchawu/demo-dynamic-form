@@ -1,5 +1,6 @@
 <%= simple_form_for(@machine) do |f| %>
   <%= f.input :name, label: false, placeholder:'商品名稱' %>
+  <hr />
   <% if @machine.parts.any? %>
     <%= f.simple_fields_for :parts do |part| %>
       <%= render 'part_fields', f: part %>
