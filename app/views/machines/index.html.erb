@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>商品列表</h1>
+<%= link_to '新增商品', new_machine_path, class:'btn btn-success' %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @machines.each do |machine| %>
+      <tr>
+        <td><%= link_to machine.name, machine %></td>
+        <td><%= link_to 'Edit', edit_machine_path(machine) %></td>
+        <td><%= link_to 'Destroy', machine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
